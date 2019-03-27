@@ -7,14 +7,14 @@ if !exists('g:browsers_castle_default_url')
   let g:browsers_castle_default_url = 'http://localhost:3000'
 endif
 
-command! -nargs=? -complete=file Canary     silent call OpenInBrowser('Google Chrome Canary', <f-args>)
-command! -nargs=? -complete=file Chrome     silent call OpenInBrowser('Google Chrome', <f-args>)
-command! -nargs=? -complete=file Firefox    silent call OpenInBrowser('Firefox', <f-args>)
-command! -nargs=? -complete=file FirefoxDev silent call OpenInBrowser('FirefoxDeveloperEdition', <f-args>)
-command! -nargs=? -complete=file Safari     silent call OpenInBrowser('Safari', <f-args>)
-command! -nargs=? -complete=file SafariDev  silent call OpenInBrowser('Safari Technology Preview', <f-args>)
+command! -nargs=? -complete=file Canary     silent call s:openInBrowser('Google Chrome Canary', <f-args>)
+command! -nargs=? -complete=file Chrome     silent call s:openInBrowser('Google Chrome', <f-args>)
+command! -nargs=? -complete=file Firefox    silent call s:openInBrowser('Firefox', <f-args>)
+command! -nargs=? -complete=file FirefoxDev silent call s:openInBrowser('FirefoxDeveloperEdition', <f-args>)
+command! -nargs=? -complete=file Safari     silent call s:openInBrowser('Safari', <f-args>)
+command! -nargs=? -complete=file SafariDev  silent call s:openInBrowser('Safari Technology Preview', <f-args>)
 
-function! OpenInBrowser(browser, ...)
+function! s:openInBrowser(browser, ...)
   if a:0 == 0
     let l:route = g:browsers_castle_default_url
   elseif match(a:1, '^:\d\+') != -1
