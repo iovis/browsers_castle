@@ -1,0 +1,93 @@
+*browsers_castle.txt*  Start your browser from Vim
+
+Author:  David Marchante <https://github.com/iovis9>
+License: Same terms as Vim itself (see |license|)
+Version: 1.0 (2019-03-27)
+
+This plugin is only available if 'compatible' is not set.
+
+==============================================================================
+CONTENTS                                            *browsers_castle-contents*
+
+    1. Usage ................ |browsers_castle-usage|
+    2. Customisation ........ |browsers_castle-customisation|
+    3. Examples ............. |browsers_castle-examples|
+    4. Bugs ................. |browsers_castle-bugs|
+    5. Changelog ............ |browsers_castle-changelog|
+
+==============================================================================
+USAGE                                                  *browsers_castle-usage*
+
+Specify a browser and a url
+
+                                                                     *:Chrome*
+:Chrome [url]
+                      Open [url] in Google Chrome.
+
+                      [url] can be:
+                        - a url (like 'https://github.com')
+                        - a local port (like ':3000' for localhost:3000)
+                        - a local file
+
+                                                                     *:Canary*
+:Canary [url]
+                      Open [url] in Google Chrome Canary.
+
+                                                                    *:Firefox*
+:Firefox [url]
+                      Open [url] in Firefox.
+
+                                                                 *:FirefoxDev*
+:FirefoxDev [url]
+                      Open [url] in Firefox Developer Edition.
+
+                                                                     *:Safari*
+:Safari [url]
+                      Open [url] in Safari.
+
+                                                                  *:SafariDev*
+:SafariDev [url]
+                      Open [url] in Safari Technology Preview.
+
+                                                                     *:Google*
+:Google {search}
+                      Search {search} in Google (using Chrome)
+
+==============================================================================
+CUSTOMISATION                                  *browsers_castle-customisation*
+
+------------------------------------------------------------------------------
+                                               *g:browsers_castle_default_url*
+Default: 'http://localhost:3000'
+
+Default url to use without arguments.
+>
+    let g:browsers_castle_default_url = 'http://localhost:4200'
+>
+==============================================================================
+EXAMPLES                                            *browsers_castle-examples*
+
+Open github.com in Chrome
+>
+    :Chrome https://github.com
+>
+Open current file in Canary
+>
+    :Canary %
+>
+Open http://localhost:8080 in Firefox Developer Edition
+>
+    :FirefoxDev :8080
+>
+==============================================================================
+BUGS                                                    *browsers_castle-bugs*
+
+Report any issues to https://github.com/iovis9/browsers_castle.vim/issues
+
+==============================================================================
+CHANGELOG                                          *browsers_castle-changelog*
+
+Version 1.0: 2019-03-27
+  - Initial release
+
+vim:tw=78:ts=8:ft=help:norl:
