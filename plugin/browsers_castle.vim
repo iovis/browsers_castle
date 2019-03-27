@@ -14,6 +14,8 @@ command! -nargs=? -complete=file FirefoxDev silent call <SID>openInBrowser('Fire
 command! -nargs=? -complete=file Safari     silent call <SID>openInBrowser('Safari', <f-args>)
 command! -nargs=? -complete=file SafariDev  silent call <SID>openInBrowser('Safari Technology Preview', <f-args>)
 
+command! -nargs=+ Google silent call <SID>searchInBrowser('Google Chrome', <q-args>)
+
 function! s:openInBrowser(browser, ...)
   if a:0 == 0
     let l:route = g:browsers_castle_default_url
