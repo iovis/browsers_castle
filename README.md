@@ -1,7 +1,8 @@
 # Browser's Castle
 
 Open your browser from Vim (only macOS)
-![Browser's Castle](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiD_Lz8k6HhAhUH3xoKHegrBZ0QjRx6BAgBEAU&url=https%3A%2F%2Fwww.slideshare.net%2Ffitc_slideshare%2Fbrowsers-castle-defend-your-code-like-a-designer&psig=AOvVaw3Omr94AK4v9KXdCmfdoiqN&ust=1553735658807757 "Browser's Castle")
+
+![Browser's Castle](https://image.slidesharecdn.com/browserscastle-defendyourcodelikeadesigner-170927185250/95/browsers-castle-defend-your-code-like-a-designer-1-638.jpg?cb=1506538510)
 
 ## Installation ##
 
