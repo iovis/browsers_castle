@@ -82,7 +82,7 @@ Open http://localhost:8080 in Firefox Developer Edition
 ==============================================================================
 BUGS                                                    *browsers_castle-bugs*
 
-Report any issues to https://github.com/iovis9/browsers_castle.vim/issues
+Report any issues to https://github.com/iovis9/browsers_castle/issues
 
 ==============================================================================
 CHANGELOG                                          *browsers_castle-changelog*
