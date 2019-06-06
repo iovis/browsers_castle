@@ -1,6 +1,6 @@
 *browsers_castle.txt*  Start your browser from Vim
 
-Author:  David Marchante <https://github.com/iovis9>
+Author:  David Marchante <https://github.com/iovis>
 License: Same terms as Vim itself (see |license|)
 Version: 1.0 (2019-03-27)
 
@@ -82,7 +82,7 @@ Open http://localhost:8080 in Firefox Developer Edition
 ==============================================================================
 BUGS                                                    *browsers_castle-bugs*
 
-Report any issues to https://github.com/iovis9/browsers_castle/issues
+Report any issues to https://github.com/iovis/browsers_castle/issues
 
 ==============================================================================
 CHANGELOG                                          *browsers_castle-changelog*
