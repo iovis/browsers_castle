@@ -24,5 +24,5 @@ development versions, see the docs for the full list
 :Chrome https://google.com  " Open google.com in Chrome
 :Canary :3000               " Open http://localhost:3000 in Google Chrome Canary
 :Firefox %                  " Open current file in Firefox
-:Google symlink syntax      " I honestly had to search this one while developing this plugin
+:Google symlink syntax      " Search 'symlink syntax' in Google
 ```

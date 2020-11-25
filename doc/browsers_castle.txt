@@ -2,7 +2,7 @@
 
 Author:  David Marchante <https://github.com/iovis>
 License: Same terms as Vim itself (see |license|)
-Version: 1.0 (2019-03-27)
+Version: 1.1 (2020-11-25)
 
 This plugin is only available if 'compatible' is not set.
 
@@ -51,7 +51,7 @@ Specify a browser and a url
 
                                                                      *:Google*
 :Google {search}
-                      Search {search} in Google (using Chrome)
+                      Search {search} in Google
 
 ==============================================================================
 CUSTOMISATION                                  *browsers_castle-customisation*
@@ -78,6 +78,10 @@ Open current file in Canary
 Open http://localhost:8080 in Firefox Developer Edition
 >
     :FirefoxDev :8080
+
+Open a local project in your browser (with tpope/vim-dotenv)
+>
+    :execute 'Canary ' . DotenvGet('PROJECT_URL')
 >
 ==============================================================================
 BUGS                                                    *browsers_castle-bugs*
@@ -86,6 +90,10 @@ Report any issues to https://github.com/iovis/browsers_castle/issues
 
 ==============================================================================
 CHANGELOG                                          *browsers_castle-changelog*
+
+Version 1.1: 2020-11-25
+  - Make Google search in default browser
+  - Fix Big Sur bug not understanding urls with spaces
 
 Version 1.0: 2019-03-27
   - Initial release
