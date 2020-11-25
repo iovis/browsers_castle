@@ -14,7 +14,7 @@ command! -nargs=? -complete=file FirefoxDev silent call <SID>openInBrowser('Fire
 command! -nargs=? -complete=file Safari     silent call <SID>openInBrowser('Safari', <f-args>)
 command! -nargs=? -complete=file SafariDev  silent call <SID>openInBrowser('Safari Technology Preview', <f-args>)
 
-command! -nargs=+ Google silent call <SID>searchInBrowser('Google Chrome', <q-args>)
+command! -nargs=+ Google call <SID>searchInGoogle(<q-args>)
 
 function! s:openInBrowser(browser, ...)
   if a:0 == 0
@@ -26,16 +26,31 @@ function! s:openInBrowser(browser, ...)
     let l:route = a:1
   endif
 
-  call <SID>open(l:route, a:browser)
+  call s:open(l:route, a:browser)
 endfunction
 
-function! s:searchInBrowser(browser, search)
+function! s:searchInGoogle(search)
   let l:google = 'https://www.google.com/search?q='
-  let l:route  = l:google . a:search
+  let l:route  = l:google . s:url_encode(a:search)
 
-  call <SID>open(l:route, a:browser)
+  call s:open(l:route)
 endfunction
 
-function! s:open(route, browser)
-  execute '!open "' . a:route . '" -a ' . shellescape(a:browser)
+function! s:open(route, ...)
+  let l:browser = get(a:, 1)
+  let l:open_command = '!open ' . shellescape(a:route)
+
+  if !empty(l:browser)
+    let l:open_command .= ' -a ' . shellescape(l:browser)
+  endif
+
+  echo l:open_command
+  execute l:open_command
+endfunction
+
+" Shamelessly copied from tpope/vim-unimpaired
+function! s:url_encode(str) abort
+  " iconv trick to convert utf-8 bytes to 8bits indiviual char.
+  " Had to add \\ before the % to avoid vim expanding it in :execute
+  return substitute(iconv(a:str, 'latin1', 'utf-8'),'[^A-Za-z0-9_.~-]','\="\\%".printf("%02X",char2nr(submatch(0)))','g')
 endfunction
