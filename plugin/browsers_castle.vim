@@ -14,7 +14,7 @@ command! -nargs=? -complete=file FirefoxDev silent call <SID>openInBrowser('Fire
 command! -nargs=? -complete=file Safari     silent call <SID>openInBrowser('Safari', <f-args>)
 command! -nargs=? -complete=file SafariDev  silent call <SID>openInBrowser('Safari Technology Preview', <f-args>)
 
-command! -nargs=+ Google call <SID>searchInGoogle(<q-args>)
+command! -nargs=+ Google silent call <SID>searchInGoogle(<q-args>)
 
 function! s:openInBrowser(browser, ...)
   if a:0 == 0
@@ -44,7 +44,6 @@ function! s:open(route, ...)
     let l:open_command .= ' -a ' . shellescape(l:browser)
   endif
 
-  echo l:open_command
   execute l:open_command
 endfunction
 
