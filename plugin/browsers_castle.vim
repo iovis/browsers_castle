@@ -26,16 +26,16 @@ function! s:openInBrowser(browser, ...)
     let l:route = a:1
   endif
 
-  call <SID>open(a:browser, l:route)
+  call <SID>open(l:route, a:browser)
 endfunction
 
 function! s:searchInBrowser(browser, search)
   let l:google = 'https://www.google.com/search?q='
   let l:route  = l:google . a:search
 
-  call <SID>open(a:browser, l:route)
+  call <SID>open(l:route, a:browser)
 endfunction
 
-function! s:open(browser, route)
+function! s:open(route, browser)
   execute '!open "' . a:route . '" -a ' . shellescape(a:browser)
 endfunction
