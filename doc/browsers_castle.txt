@@ -2,7 +2,7 @@
 
 Author:  David Marchante <https://github.com/iovis>
 License: Same terms as Vim itself (see |license|)
-Version: 1.1 (2020-11-25)
+Version: 1.2 (2022-06-17)
 
 This plugin is only available if 'compatible' is not set.
 
@@ -19,6 +19,15 @@ CONTENTS                                            *browsers_castle-contents*
 USAGE                                                  *browsers_castle-usage*
 
 Specify a browser and a url
+
+                                                                     *:Browse*
+:Browse [url]
+                      Open [url] in your default browser.
+
+                      [url] can be:
+                        - a url (like 'https://github.com')
+                        - a local port (like ':3000' for localhost:3000)
+                        - a local file
 
                                                                      *:Chrome*
 :Chrome [url]
@@ -49,6 +58,15 @@ Specify a browser and a url
 :SafariDev [url]
                       Open [url] in Safari Technology Preview.
 
+                                                                  *SearchIn()*
+SearchIn({url}, {query})
+                      Search for {query} on {url}.
+
+                      {url} needs a '%%QUERY%%' placeholder for the query.
+
+                      Example: >
+    call SearchIn('https://www.google.com/search?q=%%QUERY%%', 'my search')
+<
                                                                      *:Google*
 :Google {search}
                       Search {search} in Google
@@ -90,6 +108,10 @@ Report any issues to https://github.com/iovis/browsers_castle/issues
 
 ==============================================================================
 CHANGELOG                                          *browsers_castle-changelog*
+
+Version 1.2: 2022-06-17
+  - Add *:Browser* command to open in default browser
+  - Add *SearchIn()* function to define web searches
 
 Version 1.1: 2020-11-25
   - Make Google search in default browser
