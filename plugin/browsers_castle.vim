@@ -15,7 +15,7 @@ command! -nargs=? -complete=file FirefoxDev silent call <SID>openInBrowser('Fire
 command! -nargs=? -complete=file Safari     silent call <SID>openInBrowser('Safari', <f-args>)
 command! -nargs=? -complete=file SafariDev  silent call <SID>openInBrowser('Safari Technology Preview', <f-args>)
 
-command! -nargs=+ Google silent call <SID>searchInGoogle(<q-args>)
+command! -nargs=+ Google silent call SearchIn('https://www.google.com/search?q=%%QUERY%%', <q-args>)
 
 function! s:openInBrowser(browser, ...)
   if a:0 == 0
@@ -30,22 +30,20 @@ function! s:openInBrowser(browser, ...)
   call s:open(l:route, a:browser)
 endfunction
 
-function! s:searchInGoogle(search)
-  let l:google = 'https://www.google.com/search?q='
-  let l:route  = l:google . s:url_encode(a:search)
-
+function! SearchIn(url, search)
+  let l:route = substitute(a:url, '%%QUERY%%', s:url_encode(a:search), '')
   call s:open(l:route)
 endfunction
 
 function! s:open(route, ...)
   let l:browser = get(a:, 1)
-  let l:open_command = '!open ' . shellescape(a:route)
+  let l:open_command = 'open ' . shellescape(a:route)
 
   if !empty(l:browser)
     let l:open_command .= ' -a ' . shellescape(l:browser)
   endif
 
-  execute l:open_command
+  call system(l:open_command)
 endfunction
 
 " Shamelessly copied from tpope/vim-unimpaired
