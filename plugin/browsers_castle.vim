@@ -7,7 +7,7 @@ if !exists('g:browsers_castle_default_url')
   let g:browsers_castle_default_url = 'http://localhost:3000'
 endif
 
-command! -nargs=? -complete=file Browse     silent call <SID>open(<f-args>)
+command! -nargs=? -complete=file Browser    silent call <SID>open(<f-args>)
 command! -nargs=? -complete=file Canary     silent call <SID>openInBrowser('Google Chrome Canary', <f-args>)
 command! -nargs=? -complete=file Chrome     silent call <SID>openInBrowser('Google Chrome', <f-args>)
 command! -nargs=? -complete=file Firefox    silent call <SID>openInBrowser('Firefox', <f-args>)

@@ -20,8 +20,8 @@ USAGE                                                  *browsers_castle-usage*
 
 Specify a browser and a url
 
-                                                                     *:Browse*
-:Browse [url]
+                                                                    *:Browser*
+:Browser [url]
                       Open [url] in your default browser.
 
                       [url] can be:
